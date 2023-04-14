@@ -14,7 +14,7 @@ logging.basicConfig(filename="command_logs.log",
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-welcome_text = "༼ つ ◕ ◡ ◕ ༽つ\nMinecraft Server Status\n\n/status _url.example.com_\n/players _play.example.com_\n\nBot developed by @GSiesto"
+welcome_text = "༼ つ ◕ ◡ ◕ ༽つ\nMinecraft Server Status\n\n/status _url.example.com_\n/players _play.example.com_\n\nBot developed by @Aadarsh_Legend"
 
 btn_players = telegram.InlineKeyboardButton("Players", callback_data='pattern_players')
 btn_status = telegram.InlineKeyboardButton("Status", callback_data='pattern_status')
@@ -75,7 +75,7 @@ def cmd_players(update, context):
 
         if len(context.args) != 1:
             error_incomplete(context.bot, update)
-            logging.error("You must provide an URL, /players minecraft.example.com", )
+            logging.error("You must provide an URL, /players {}.aternos.me:{port}", )
             return
 
         if not utils.validUrl(context.args[0]):
